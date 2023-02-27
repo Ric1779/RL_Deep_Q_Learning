@@ -13,6 +13,8 @@ from agents.pong.config import CartPoleConfig
 from agents.base_agent import BaseAgent
 from agents.pong.utils import preprocess_observation, preprocess_sampled_batch
 
+from agents.pong.save_gig import save_frames_as_gif
+
 class PongAgent(BaseAgent):
     """The CartPole agent.
     """
@@ -137,14 +139,14 @@ class PongAgent(BaseAgent):
            
             done = False
             episode_return = 0
-
+            frames = []
             while not done:
                 if render:
                     self.env.render()
 
                 action = self.dqn.act(obs_stack)
                 next_obs, reward, done, _, info = self.env.step(action)
-                
+                frames.append(next_obs)
                 next_obs = preprocess_observation(next_obs).unsqueeze(0)
 
                 next_obs_stack = torch.cat((obs_stack[:, 1:, ...], next_obs.unsqueeze(1)), dim=1).to(self.device)
@@ -153,7 +155,8 @@ class PongAgent(BaseAgent):
 
                 episode_return += reward
             total_return += episode_return
-
+            if i==0:
+                save_frames_as_gif(frames)
         return total_return / self.cfg.evaluate.episodes
 
     def simulate(self) -> None:

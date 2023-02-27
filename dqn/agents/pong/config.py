@@ -27,7 +27,7 @@ class EvaluateParams:
     """
 
     frequency: int = 25
-    episodes: int = 5
+    episodes: int = 1
 
 
 @dataclass
