@@ -28,7 +28,7 @@ $ python -m dqn --agent <agent_name> --mode <train/simulate>
 ## Agents <a name = "agents"></a>
 
 ### CartPole-v0 (`--agent cartpole`)
-More information [here](https://gym.openai.com/envs/CartPole-v0/).
+More information [here](https://www.gymlibrary.dev/environments/classic_control/cart_pole/).
 
 The following simulation is 3 episodes of a trained _CartPole_ agent receiving a mean reward of `200.0` after training for 1000 episodes.
 
@@ -47,4 +47,20 @@ $ python -m dqn --agent cartpole --mode simulate
 ```
 
 ### Pong-V0 (`--agent pong`)
-> In-progress
+More information [here](https://www.gymlibrary.dev/environments/atari/pong/).
+
+The following simulation is 3 episodes of a trained _CartPole_ agent receiving a mean reward of `200.0` after training for 1000 episodes.
+
+<p align="center">
+<img src="static/gym_animation.gif" alt="Pong-V4" width="300"/>
+</p>
+
+#### To Train:
+```
+$ python -m dqn --agent pong --mode train
+```
+
+#### To Simulate:
+```
+$ python -m dqn --agent pong --mode simulate
+```
