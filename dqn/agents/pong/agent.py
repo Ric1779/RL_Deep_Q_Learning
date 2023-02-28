@@ -155,8 +155,7 @@ class PongAgent(BaseAgent):
 
                 episode_return += reward
             total_return += episode_return
-            if i==0:
-                save_frames_as_gif(frames)
+            save_frames_as_gif(frames)
         return total_return / self.cfg.evaluate.episodes
 
     def simulate(self) -> None:
