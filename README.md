@@ -49,10 +49,10 @@ $ python -m dqn --agent cartpole --mode simulate
 ### Pong-V0 (`--agent pong`)
 More information [here](https://www.gymlibrary.dev/environments/atari/pong/).
 
-The following simulation is 3 episodes of a trained _CartPole_ agent receiving a mean reward of `200.0` after training for 1000 episodes.
+The following simulation is 3 episodes of a trained _CartPole_ agent receiving a mean reward of `-7.33` after training for 1000 episodes.
 
 <p align="center">
-<img src="static/gym_animation.gif" alt="Pong-V4" width="300"/>
+<img src="static/pong-1.gif" alt="Pong-V4" width="300"/>
 </p>
 
 #### To Train:
